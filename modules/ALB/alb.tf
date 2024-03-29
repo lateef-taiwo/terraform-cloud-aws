@@ -36,7 +36,7 @@ resource "aws_lb" "ialb" {
   tags = merge(
     var.tags,
     {
-      Name = "TCS-int-alb"
+      Name = "cloudops-int-alb"
     },
   )
 

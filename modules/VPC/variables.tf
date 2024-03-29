@@ -40,7 +40,7 @@ variable "tags" {
 
 variable "name" {
   type    = string
-  default = "TCS"
+  default = "cloudops"
 
 }
 variable "environment" {

@@ -11,10 +11,10 @@
 terraform {
   
   backend "remote" {
-    organization = "TCS-Tony"
+    organization = "savvy-infrastructure-as-code"
 
     workspaces {
-        name =  "TCS-Packer-Terraform-Setup"
+        name =  "Automate-Infrastructure-With-IaC-using-Terraform-Terraform-Cloud"
 
     }
   }

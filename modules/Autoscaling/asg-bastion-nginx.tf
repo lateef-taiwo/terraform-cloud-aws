@@ -1,5 +1,5 @@
 #### creating sns topic for all the auto scaling groups
-resource "aws_sns_topic" "tony-sns" {
+resource "aws_sns_topic" "cloudops-sns" {
   name = "Default_CloudWatch_Alarms_Topic"
 }
 
@@ -9,7 +9,7 @@ data "aws_availability_zones" "available" {
 }
 
 
-resource "aws_autoscaling_notification" "tony_notifications" {
+resource "aws_autoscaling_notification" "cloudops_notifications" {
   group_names = [
     aws_autoscaling_group.bastion-asg.name,
     aws_autoscaling_group.nginx-asg.name,
@@ -23,7 +23,7 @@ resource "aws_autoscaling_notification" "tony_notifications" {
     "autoscaling:EC2_INSTANCE_TERMINATE_ERROR",
   ]
 
-  topic_arn = aws_sns_topic.tony-sns.arn
+  topic_arn = aws_sns_topic.cloudops-sns.arn
 }
 
 
@@ -51,7 +51,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
   }
   tag {
     key                 = "Name"
-    value               = "TCS-bastion"
+    value               = "cloudopsdomain-bastion"
     propagate_at_launch = true
   }
 
@@ -79,7 +79,7 @@ resource "aws_autoscaling_group" "nginx-asg" {
 
   tag {
     key                 = "Name"
-    value               = "TCS-nginx"
+    value               = "cloudopsdomain-nginx"
     propagate_at_launch = true
   }
 

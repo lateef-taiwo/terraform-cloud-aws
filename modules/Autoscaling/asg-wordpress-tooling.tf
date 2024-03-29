@@ -17,7 +17,7 @@ resource "aws_autoscaling_group" "wordpress-asg" {
   }
   tag {
     key                 = "Name"
-    value               = "TCS-wordpress"
+    value               = "cloudopsdomain-wordpress"
     propagate_at_launch = true
   }
 }
@@ -50,7 +50,7 @@ resource "aws_autoscaling_group" "tooling-asg" {
 
   tag {
     key                 = "Name"
-    value               = "TCS-tooling"
+    value               = "cloudopsdomain-tooling"
     propagate_at_launch = true
   }
 }

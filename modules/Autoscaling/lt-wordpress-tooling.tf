@@ -25,7 +25,7 @@ resource "aws_launch_template" "wordpress-launch-template" {
     tags = merge(
       var.tags,
       {
-        Name = "TCS-wordpress"
+        Name = "cloudopsdomain-wordpress"
       },
     )
 
@@ -60,7 +60,7 @@ resource "aws_launch_template" "tooling-launch-template" {
     tags = merge(
       var.tags,
       {
-        Name = "TCS-tooling"
+        Name = "cloudopsdomain-tooling"
       },
     )
 
