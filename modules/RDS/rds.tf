@@ -19,7 +19,7 @@ resource "aws_db_instance" "cloudops-rds" {
   engine                 = "mysql"
   engine_version         = "5.7"
   instance_class         = "db.t2.micro"
-  db_name                = "tonydb"
+  db_name                = "savvydb"
   username               = var.db-username
   password               = var.db-password
   parameter_group_name   = "default.mysql5.7"
