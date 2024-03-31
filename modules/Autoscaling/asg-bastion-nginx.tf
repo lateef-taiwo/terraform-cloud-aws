@@ -51,7 +51,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
   }
   tag {
     key                 = "Name"
-    value               = "cloudopsdomain-bastion"
+    value               = "cloudops-bastion"
     propagate_at_launch = true
   }
 
@@ -79,15 +79,15 @@ resource "aws_autoscaling_group" "nginx-asg" {
 
   tag {
     key                 = "Name"
-    value               = "cloudopsdomain-nginx"
+    value               = "cloudops-nginx"
     propagate_at_launch = true
   }
 
 }
 
-  # attaching autoscaling group of nginx to external load balancer
+ # attaching autoscaling group of nginx to external load balancer
 
-# resource "aws_autoscaling_attachment" "asg_attachment_nginx" {
-#   autoscaling_group_name = aws_autoscaling_group.nginx-asg.id
-#   lb_target_group_arn    = var.nginx-alb-tgt
-# }
+resource "aws_autoscaling_attachment" "asg_attachment_nginx" {
+  autoscaling_group_name = aws_autoscaling_group.nginx-asg.id
+  lb_target_group_arn    = var.nginx-alb-tgt
+}
