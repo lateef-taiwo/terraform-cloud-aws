@@ -1,6 +1,6 @@
 # The entire section create a certiface, public zone, and validate the certificate using DNS method
 
-# Create the certificate using a wildcard for all the domains created in mytoolz
+# Create the certificate using a wildcard for all the domains created in cloudopsdomain.online
 resource "aws_acm_certificate" "cloudopsdomain_cert" {
   domain_name       = "*.cloudopsdomain.online"
   validation_method = "DNS"
